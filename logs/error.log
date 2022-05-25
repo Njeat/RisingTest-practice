@@ -1,1 +1,19 @@
-02:30:04.532 ERROR [File:TestController.java] [Func:getAll] [Line:38] [Message:ERROR Level 테스트]- ERROR Level 테스트
+16:51:02.672 ERROR [File:UserController.java] [Func:createUser] [Line:92] [Message:createUser ERROR : ]- createUser ERROR : 
+16:52:34.031 ERROR [File:UserController.java] [Func:createUser] [Line:92] [Message:createUser ERROR : ]- createUser ERROR : 
+16:52:34.032 ERROR [File:UserService.java] [Func:createUser] [Line:37] [Message:createUser Service ERROR : ]- createUser Service ERROR : 
+16:53:42.594 ERROR [File:TestController.java] [Func:getAll] [Line:38] [Message:ERROR Level 테스트]- ERROR Level 테스트
+17:06:19.763 ERROR [File:UserController.java] [Func:createUser] [Line:92] [Message:createUser ERROR]- createUser ERROR
+17:06:19.765 ERROR [File:UserService.java] [Func:createUser] [Line:37] [Message:createUser Service ERROR]- createUser Service ERROR
+17:20:19.471 ERROR [File:UserController.java] [Func:createUser] [Line:92] [Message:createUser ERROR]- createUser ERROR
+17:20:19.473 ERROR [File:UserService.java] [Func:createUser] [Line:37] [Message:createUser Service ERROR]- createUser Service ERROR
+17:27:54.491 ERROR [File:UserController.java] [Func:createUser] [Line:92] [Message:createUser ERROR]- createUser ERROR
+17:27:54.494 ERROR [File:UserService.java] [Func:createUser] [Line:37] [Message:createUser Service ERROR]- createUser Service ERROR
+17:27:54.633 ERROR [File:UserController.java] [Func:createUser] [Line:109] [Message:createUser catch ERROR]- createUser catch ERROR
+17:33:21.711 ERROR [File:UserController.java] [Func:createUser] [Line:92] [Message:createUser ERROR]- createUser ERROR
+17:33:21.716 ERROR [File:UserService.java] [Func:createUser] [Line:37] [Message:createUser Service ERROR]- createUser Service ERROR
+17:33:21.857 ERROR [File:UserController.java] [Func:createUser] [Line:109] [Message:createUser catch ERROR]- createUser catch ERROR
+19:53:08.058 ERROR [File:UserController.java] [Func:createUser] [Line:92] [Message:createUser ERROR]- createUser ERROR
+19:53:08.060 ERROR [File:UserService.java] [Func:createUser] [Line:37] [Message:createUser Service ERROR]- createUser Service ERROR
+19:53:08.080 ERROR [File:UserController.java] [Func:createUser] [Line:109] [Message:createUser catch ERROR]- createUser catch ERROR
+19:59:21.762 ERROR [File:UserService.java] [Func:createUser] [Line:37] [Message:createUser Service ERROR]- createUser Service ERROR
+19:59:21.899 ERROR [File:UserService.java] [Func:createUser] [Line:58] [Message:createUser ERROR]- createUser ERROR

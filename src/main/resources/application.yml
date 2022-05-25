@@ -1,9 +1,28 @@
 server:
-  port: 8080
+  port: 9000
 
 spring:
   application:
     name: demo
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/carrot?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&autoReconnect=true
+    username: root
+    password: Nmjt1915!@
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #  datasource:
 #    platform: mysql
@@ -14,14 +33,4 @@ spring:
 #    # driver-class-name: com.mysql.jdbc.Driver # mysql 5버전
 
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-  h2:
-    console:
-      enabled=true
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: root
-    password: Nmjt1915!@
+

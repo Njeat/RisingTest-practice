@@ -1,8 +1,7 @@
-package com.example.demo.src.user.provider;
+package com.example.demo.src.user;
 
 
 import com.example.demo.config.BaseException;
-import com.example.demo.src.user.dao.UserDao;
 import com.example.demo.src.user.model.*;
 import com.example.demo.utils.JwtService;
 import com.example.demo.utils.SHA256;
@@ -49,7 +48,7 @@ public class UserProvider {
         catch (Exception exception) {
             throw new BaseException(DATABASE_ERROR);
         }
-                    }
+    }
 
 
     public GetUserRes getUser(int userIdx) throws BaseException {

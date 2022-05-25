@@ -1,4 +1,4 @@
-package com.example.demo.src.user.dao;
+package com.example.demo.src.user;
 
 
 import com.example.demo.src.user.model.*;
@@ -63,8 +63,8 @@ public class UserDao {
         Object[] createUserParams = new Object[]{postUserReq.getUserName(), postUserReq.getId(), postUserReq.getPassword(), postUserReq.getEmail()};
         this.jdbcTemplate.update(createUserQuery, createUserParams);
 
-        String lastInsertIdQuery = "select last_insert_id()";
-        return this.jdbcTemplate.queryForObject(lastInsertIdQuery,int.class);
+        String lastInserIdQuery = "select last_insert_id()";
+        return this.jdbcTemplate.queryForObject(lastInserIdQuery,int.class);
     }
 
     public int checkEmail(String email){
