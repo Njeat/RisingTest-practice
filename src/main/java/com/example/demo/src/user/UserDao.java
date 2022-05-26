@@ -25,8 +25,8 @@ public class UserDao {
                 (rs,rowNum) -> new GetUserRes(
                         rs.getInt("userIdx"),
                         rs.getString("userName"),
-                        rs.getString("ID"),
-                        rs.getString("Email"),
+                        rs.getString("id"),
+                        rs.getString("email"),
                         rs.getString("password"))
                 );
     }
@@ -38,8 +38,8 @@ public class UserDao {
                 (rs, rowNum) -> new GetUserRes(
                         rs.getInt("userIdx"),
                         rs.getString("userName"),
-                        rs.getString("ID"),
-                        rs.getString("Email"),
+                        rs.getString("id"),
+                        rs.getString("email"),
                         rs.getString("password")),
                 getUsersByEmailParams);
     }
@@ -51,15 +51,15 @@ public class UserDao {
                 (rs, rowNum) -> new GetUserRes(
                         rs.getInt("userIdx"),
                         rs.getString("userName"),
-                        rs.getString("ID"),
-                        rs.getString("Email"),
+                        rs.getString("id"),
+                        rs.getString("email"),
                         rs.getString("password")),
                 getUserParams);
     }
     
 
     public int createUser(PostUserReq postUserReq){
-        String createUserQuery = "insert into UserInfo (userName, ID, password, email) VALUES (?,?,?,?)";
+        String createUserQuery = "insert into UserInfo (userName, id, password, email) VALUES (?,?,?,?)";
         Object[] createUserParams = new Object[]{postUserReq.getUserName(), postUserReq.getId(), postUserReq.getPassword(), postUserReq.getEmail()};
         this.jdbcTemplate.update(createUserQuery, createUserParams);
 
@@ -84,13 +84,13 @@ public class UserDao {
     }
 
     public User getPwd(PostLoginReq postLoginReq){
-        String getPwdQuery = "select userIdx, password,email,userName,ID from UserInfo where ID = ?";
+        String getPwdQuery = "select userIdx, password,email,userName,id from UserInfo where id = ?";
         String getPwdParams = postLoginReq.getId();
 
         return this.jdbcTemplate.queryForObject(getPwdQuery,
                 (rs,rowNum)-> new User(
                         rs.getInt("userIdx"),
-                        rs.getString("ID"),
+                        rs.getString("id"),
                         rs.getString("userName"),
                         rs.getString("password"),
                         rs.getString("email")
