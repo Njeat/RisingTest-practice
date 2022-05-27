@@ -11,6 +11,9 @@ spring:
     username: root
     password: Nmjt1915!@
 
+  pofiles:
+    include: oauth
+
 
 
 

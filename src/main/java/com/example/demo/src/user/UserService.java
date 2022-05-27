@@ -34,19 +34,19 @@ public class UserService {
     //POST
     public PostUserRes createUser(PostUserReq postUserReq) throws BaseException {
         //중복
-        if(userProvider.checkEmail(postUserReq.getEmail()) ==1){
-            throw new BaseException(POST_USERS_EXISTS_EMAIL);
+        if(userProvider.checkPhoneNum(postUserReq.getPhoneNum()) ==1){
+            throw new BaseException(POST_USERS_EXISTS_PHONENUM);
         }
 
-        String pwd;
-        try{
-            //암호화
-            pwd = new SHA256().encrypt(postUserReq.getPassword());
-            postUserReq.setPassword(pwd);
-
-        } catch (Exception ignored) {
-            throw new BaseException(PASSWORD_ENCRYPTION_ERROR);
-        }
+//        String pwd;
+//        try{
+//            //암호화
+//            pwd = new SHA256().encrypt(postUserReq.getPassword());
+//            postUserReq.setPassword(pwd);
+//
+//        } catch (Exception ignored) {
+//            throw new BaseException(PASSWORD_ENCRYPTION_ERROR);
+//        }
         try{
             int userIdx = userDao.createUser(postUserReq);
             //jwt 발급.
