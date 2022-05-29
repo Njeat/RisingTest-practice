@@ -1,5 +1,6 @@
 package com.example.demo.src.user;
 
+import com.example.demo.src.sms.model.Sms;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.example.demo.config.BaseException;
@@ -20,6 +21,7 @@ import static com.example.demo.utils.ValidationRegex.isRegexEmail;
 @RequestMapping("/app/users")
 public class UserController {
     final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private Sms sms;
 
     @Autowired
     private final UserProvider userProvider;
@@ -27,9 +29,6 @@ public class UserController {
     private final UserService userService;
     @Autowired
     private final JwtService jwtService;
-
-
-
 
     public UserController(UserProvider userProvider, UserService userService, JwtService jwtService){
         this.userProvider = userProvider;
@@ -88,7 +87,8 @@ public class UserController {
     // Body
     @ResponseBody
     @PostMapping("")
-    public BaseResponse<PostUserRes> createUser(@RequestBody PostUserReq postUserReq) {
+    public BaseResponse<PostUserRes> createUser(@RequestBody PostUserReq postUserReq,
+                                                @RequestParam String phoneNum) {
         // TODO: email 관련한 짧은 validation 예시입니다. 그 외 더 부가적으로 추가해주세요!
 //        if(postUserReq.getEmail() == null){
 //            return new BaseResponse<>(POST_USERS_EMPTY_EMAIL);
@@ -97,8 +97,9 @@ public class UserController {
 //        if(!isRegexEmail(postUserReq.getEmail())){
 //            return new BaseResponse<>(POST_USERS_INVALID_EMAIL);
 //        }
+        phoneNum = sms.getPhoneNum();
         try{
-            PostUserRes postUserRes = userService.createUser(postUserReq);
+            PostUserRes postUserRes = userService.createUser(postUserReq, phoneNum);
             return new BaseResponse<>(postUserRes);
         } catch(BaseException exception){
             return new BaseResponse<>((exception.getStatus()));

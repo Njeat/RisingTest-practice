@@ -1,6 +1,7 @@
 package com.example.demo.src.user;
 
 
+import com.example.demo.src.sms.model.Sms;
 import com.example.demo.src.user.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -55,9 +56,9 @@ public class UserDao {
     }
     
 
-    public int createUser(PostUserReq postUserReq){
-        String createUserQuery = "insert into UserInfo (profileImgUrl, userName, phoneNum) VALUES (?,?,?)";
-        Object[] createUserParams = new Object[]{postUserReq.getProfileImgUrl(), postUserReq.getUserName(), postUserReq.getPhoneNum()};
+    public int createUser(PostUserReq postUserReq, String phoneNum){
+        String createUserQuery = "insert into UserInfo (profileImgUrl, userName, phoneNum) values (?,?,?)";
+        Object[] createUserParams = new Object[]{postUserReq.getProfileImgUrl(), postUserReq.getUserName(), phoneNum};
         this.jdbcTemplate.update(createUserQuery, createUserParams);
 
         String lastInsertIdQuery = "select last_insert_id()";
