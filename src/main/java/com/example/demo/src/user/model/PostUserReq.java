@@ -10,4 +10,5 @@ import lombok.Setter;
 public class PostUserReq {
     private String userName;
     private String profileImgUrl;
+    private String phoneNum;
 }

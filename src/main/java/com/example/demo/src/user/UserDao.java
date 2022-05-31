@@ -27,7 +27,8 @@ public class UserDao {
                         rs.getInt("userIdx"),
                         rs.getString("profileImgUrl"),
                         rs.getString("userName"),
-                        rs.getString("phoneNum"))
+                        rs.getString("phoneNum"),
+                        rs.getString("status"))
                 );
     }
 
@@ -39,7 +40,8 @@ public class UserDao {
                         rs.getInt("userIdx"),
                         rs.getString("profileImgUrl"),
                         rs.getString("userName"),
-                        rs.getString("phoneNum")),
+                        rs.getString("phoneNum"),
+                        rs.getString("status")),
                 getUsersByPhoneNumParams);
     }
 
@@ -51,14 +53,15 @@ public class UserDao {
                         rs.getInt("userIdx"),
                         rs.getString("profileImgUrl"),
                         rs.getString("userName"),
-                        rs.getString("phoneNum")),
+                        rs.getString("phoneNum"),
+                        rs.getString("status")),
                 getUserParams);
     }
     
 
-    public int createUser(PostUserReq postUserReq, String phoneNum){
+    public int createUser(PostUserReq postUserReq){
         String createUserQuery = "insert into UserInfo (profileImgUrl, userName, phoneNum) values (?,?,?)";
-        Object[] createUserParams = new Object[]{postUserReq.getProfileImgUrl(), postUserReq.getUserName(), phoneNum};
+        Object[] createUserParams = new Object[]{postUserReq.getProfileImgUrl(), postUserReq.getUserName(), postUserReq.getPhoneNum()};
         this.jdbcTemplate.update(createUserQuery, createUserParams);
 
         String lastInsertIdQuery = "select last_insert_id()";
@@ -82,6 +85,7 @@ public class UserDao {
     }
 //    public User getPhoneNum(PostLoginReq postLoginReq){
 //        String getPhoneNumQuery = "select userIdx, phoneNum, userName from UserInfo where phoneNum = ?";
+//        String getPwdParams = postLoginReq.getPhoneNum();
 //    }
 
 //    public User getPwd(PostLoginReq postLoginReq){

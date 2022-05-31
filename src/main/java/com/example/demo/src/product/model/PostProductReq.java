@@ -10,9 +10,10 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 public class PostProductReq {
-    private List<String> productImgUrl;
+    private List<ProductImg> productImgs;
+    private int userIdx;
     private String title;
     private String content;
     private int price;
-    private String category;
+    private Category category;
 }

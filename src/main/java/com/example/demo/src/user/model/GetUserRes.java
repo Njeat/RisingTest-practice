@@ -13,4 +13,5 @@ public class GetUserRes {
     private String profileImgUrl;
     private String userName;
     private String phoneNum;
+    private String status;
 }

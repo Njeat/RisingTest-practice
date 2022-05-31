@@ -16,21 +16,22 @@ import java.util.Random;
 @Service
 @Slf4j
 public class SmsService {
-    private String randomNumber = "";
-    private String phoneNum = "";
+//    private String randomNumber = "";
+//    private String phoneNum = "";
 
-    private Sms sms;
-    private final UserService userService;
-    private final UserController userController;
+//    private Sms sms;
+//    private final UserService userService;
+//    private final UserController userController;
 
 
-    public SmsService(UserService userService, UserController userController){
-        this.userService = userService;
-        this.userController = userController;
-    }
+//    public SmsService(UserService userService, UserController userController){
+//        this.userService = userService;
+//        this.userController = userController;
+//    }
 
     public String sendMessage(String phoneNum) {
-        this.phoneNum = phoneNum;
+//        this.phoneNum = phoneNum;
+        String randomNumber = "";
         String api_key = Secret.SMS_API_KEY;
         String api_secret = Secret.SMS_API_SECRET_KEY;
 

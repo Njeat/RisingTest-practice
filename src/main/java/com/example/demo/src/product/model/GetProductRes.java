@@ -7,5 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class GetPostRes {
+public class GetProductRes {
+    private int productIdx;
+    private int userIdx;
+    private
 }

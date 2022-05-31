@@ -87,8 +87,7 @@ public class UserController {
     // Body
     @ResponseBody
     @PostMapping("")
-    public BaseResponse<PostUserRes> createUser(@RequestBody PostUserReq postUserReq,
-                                                @RequestParam String phoneNum) {
+    public BaseResponse<PostUserRes> createUser(@RequestBody PostUserReq postUserReq) {
         // TODO: email 관련한 짧은 validation 예시입니다. 그 외 더 부가적으로 추가해주세요!
 //        if(postUserReq.getEmail() == null){
 //            return new BaseResponse<>(POST_USERS_EMPTY_EMAIL);
@@ -97,9 +96,8 @@ public class UserController {
 //        if(!isRegexEmail(postUserReq.getEmail())){
 //            return new BaseResponse<>(POST_USERS_INVALID_EMAIL);
 //        }
-        phoneNum = sms.getPhoneNum();
         try{
-            PostUserRes postUserRes = userService.createUser(postUserReq, phoneNum);
+            PostUserRes postUserRes = userService.createUser(postUserReq);
             return new BaseResponse<>(postUserRes);
         } catch(BaseException exception){
             return new BaseResponse<>((exception.getStatus()));
@@ -122,6 +120,16 @@ public class UserController {
 //            return new BaseResponse<>(exception.getStatus());
 //        }
 //    }
+    @ResponseBody
+    @PostMapping("/logIn")
+    public BaseResponse<PostLoginRes> logIn(@RequestParam String phoneNum){
+        try{
+            PostLoginRes postLoginRes = userProvider.logIn(phoneNum);
+            return new BaseResponse<>(postLoginRes);
+        } catch (BaseException exception){
+            return new BaseResponse<>(exception.getStatus());
+        }
+    }
 
     /**
      * 유저정보변경 API

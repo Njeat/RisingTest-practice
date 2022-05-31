@@ -68,6 +68,11 @@ public class UserProvider {
         }
     }
 
+//    public PostLoginRes logIn(String phoneNum) throws BaseException{
+//        try {
+//
+//        }
+//    }
 //    public PostLoginRes logIn(PostLoginReq postLoginReq) throws BaseException{
 //        User user = userDao.getPwd(postLoginReq);
 //        String encryptPwd;
