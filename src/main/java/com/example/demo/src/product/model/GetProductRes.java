@@ -10,5 +10,4 @@ import lombok.Setter;
 public class GetProductRes {
     private int productIdx;
     private int userIdx;
-    private
 }

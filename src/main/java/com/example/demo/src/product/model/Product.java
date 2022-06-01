@@ -14,11 +14,11 @@ import java.util.List;
 public class Product {
     private int productIdx;
     private int userIdx;
-    private List<ProductImg> productImgs;
+//    private List<ProductImg> productImgs;
     private String title;
     private String content;
     private int price;
-    private Category category;
+//    private Category category;
     private String status;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

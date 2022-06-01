@@ -32,9 +32,9 @@ public class UserService {
     }
 
     //POST
-    public PostUserRes createUser(PostUserReq postUserReq) throws BaseException {
+    public PostUserRes createUser(String phoneNum) throws BaseException {
         //중복
-        if(userProvider.checkPhoneNum(postUserReq.getPhoneNum()) ==1){
+        if(userProvider.checkPhoneNum(phoneNum) ==1){
             throw new BaseException(POST_USERS_EXISTS_PHONENUM);
         }
 
@@ -48,7 +48,7 @@ public class UserService {
 //            throw new BaseException(PASSWORD_ENCRYPTION_ERROR);
 //        }
         try{
-            int userIdx = userDao.createUser(postUserReq);
+            int userIdx = userDao.createUser(phoneNum);
             //jwt 발급.
             String jwt = jwtService.createJwt(userIdx);
             return new PostUserRes(jwt,userIdx);

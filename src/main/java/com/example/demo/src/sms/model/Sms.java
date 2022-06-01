@@ -9,4 +9,5 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Sms {
     private String phoneNum;
+
 }
